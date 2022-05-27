@@ -264,7 +264,7 @@ def main():
                 bot.send_sticker(chat_id=say.chat.id,
                                  data="CAACAgIAAxkBAAIC42KP8HSrKmVOreCOjuxURK0E4qVBAAKsDgACm205SDYlCZowOCzkJAQ")
                 bot.send_message(chat_id=say.chat.id,
-                                 text="Never mind\nI will do my research",
+                                 text="Never mind\nI will do my research\nI am listening ...",
                                  parse_mode='markdown')
 
                 start.clear()
