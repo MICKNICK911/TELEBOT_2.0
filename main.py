@@ -270,7 +270,7 @@ def main():
                 start.clear()
                 start.append(5)
 
-    bot.polling()
+    bot.infinity_polling(interval=0, timeout=0)
 
 
 if __name__ == '__main__':
