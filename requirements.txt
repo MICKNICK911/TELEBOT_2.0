@@ -28,7 +28,6 @@ orjson==3.6.5
 passlib==1.7.4
 psycopg2==2.9.3
 pyasn1==0.4.8
-PyAudio @ file:///C:/Users/hp/python/Scripts/PyAudio-0.2.11-cp39-cp39-win_amd64.whl
 pycparser==2.21
 pydantic==1.8.2
 pyTelegramBotAPI==4.2.0
