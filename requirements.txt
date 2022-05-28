@@ -14,10 +14,12 @@ dnspython==2.1.0
 ecdsa==0.17.0
 email-validator==1.1.3
 fastapi==0.70.0
+Flask==2.1.2
 greenlet==1.1.2
 h11==0.12.0
 httptools==0.2.0
 idna==3.3
+importlib-metadata==4.11.4
 itsdangerous==2.0.1
 Jinja2==3.0.3
 Mako==1.2.0
@@ -26,6 +28,7 @@ orjson==3.6.5
 passlib==1.7.4
 psycopg2==2.9.3
 pyasn1==0.4.8
+PyAudio @ file:///C:/Users/hp/python/Scripts/PyAudio-0.2.11-cp39-cp39-win_amd64.whl
 pycparser==2.21
 pydantic==1.8.2
 pyTelegramBotAPI==4.2.0
@@ -53,3 +56,5 @@ urllib3==1.26.7
 uvicorn==0.15.0
 watchgod==0.7
 websockets==10.1
+Werkzeug==2.1.2
+zipp==3.8.0
