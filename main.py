@@ -12,7 +12,7 @@ bot = telebot.TeleBot(config.SECRET_KEY, parse_mode=None)
 
 
 def main():
-    models.Base.metadata.create_all(bind=database.engine)
+    # models.Base.metadata.create_all(bind=database.engine)
 
     start = [0]
     active_person = []
