@@ -287,8 +287,7 @@ def main():
         return "!", 200
 
     # bot.infinity_polling(interval=0, timeout=0)
-    # server.run(host="0.0.0.0", port=int(os.environ.get('PORT', 5000)))
-    server.run(host="0.0.0.0", port=5000)
+    server.run(host="0.0.0.0", port=int(os.environ.get('PORT', 5000)))
 
 
 if __name__ == '__main__':
