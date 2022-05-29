@@ -1,1 +1,1 @@
-web: python --bind :$PORT main.py
+web: python main.py --bind: $PORT
