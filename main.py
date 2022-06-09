@@ -290,33 +290,26 @@ def reply_message(say):
 
 # Remove webhook, it fails sometimes the set if there is a previous webhook
 
-# Empty webserver index, return nothing, just http 200
-@app.route('/', methods=['GET', 'HEAD'])
-def index():
+# Process webhook calls
+@app.route('/' + API_TOKEN, methods=['POST'])
+def webhook():
+    json_string = request.stream.read().decode('utf-8')
+    update = telebot.types.Update.de_json(json_string)
+    bot.process_new_updates([update])
     return ''
 
 
-# Process webhook calls
-@app.route('/' + WEBHOOK_URL_PATH, methods=['POST'])
-def webhook():
-    if request.headers.get('content-type') == 'application/json':
-        json_string = request.stream.read().decode('utf-8')
-        update = telebot.types.Update.de_json(json_string)
-        bot.process_new_updates([update])
-        return ''
-    else:
-        abort(403)
+@app.route('/')
+def webhook1():
+    bot.remove_webhook()
+    bot.set_webhook(url='https://telebot-2o-trial.herokuapp.com/' + config.SECRET_KEY)
+    return ''
 
 
-bot.remove_webhook()
-
-# Set webhook
-bot.set_webhook(url='https://telebot-2o-trial.herokuapp.com/' + config.SECRET_KEY)
-
-# Start flask server
-app.run(host=WEBHOOK_LISTEN,
-        port=WEBHOOK_PORT,
-        debug=True)
+if __name__ == '__main__':
+    app.run(host=WEBHOOK_LISTEN,
+            port=WEBHOOK_PORT,
+            debug=True)
 # bot.infinity_polling()
 
 # if __name__ == '__main__':
