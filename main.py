@@ -306,6 +306,7 @@ def webhook1():
 
 
 if __name__ == '__main__':
+    print('commencing')
     app.run(host=WEBHOOK_LISTEN,
             port=WEBHOOK_PORT,
             debug=True)
