@@ -288,13 +288,13 @@ def reply_message(say):
             start.append(5)
 
 
-@app.route('/' + API_TOKEN, methods=['POST', 'GET'])
+@app.route('/' + API_TOKEN, methods=['POST'])
 def webhook():
     json_string = request.stream.read().decode('utf-8')
     update = telebot.types.Update.de_json(json_string)
     bot.process_new_updates([update])
     print('starting')
-    return ''
+    return '!', 200
 
 
 @app.route('/')
@@ -302,7 +302,7 @@ def webhook1():
     bot.remove_webhook()
     bot.set_webhook(url='https://telebot-2o-trial.herokuapp.com/' + config.SECRET_KEY)
     print('ready')
-    return ''
+    return '!', 200
 
 
 if __name__ == '__main__':
