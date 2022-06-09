@@ -322,7 +322,6 @@ bot.set_webhook(url=WEBHOOK_URL_BASE + WEBHOOK_URL_PATH,
 # Start flask server
 app.run(host=WEBHOOK_LISTEN,
         port=WEBHOOK_PORT,
-        ssl_context=(WEBHOOK_SSL_CERT,),
         debug=True)
 # bot.infinity_polling()
 
