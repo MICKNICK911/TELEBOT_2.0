@@ -288,7 +288,7 @@ def reply_message(say):
             start.append(5)
 
 
-@app.route('/' + API_TOKEN, methods=['POST'])
+@app.route('/' + API_TOKEN, methods=['POST', 'GET'])
 def webhook():
     json_string = request.stream.read().decode('utf-8')
     update = telebot.types.Update.de_json(json_string)
